@@ -1,0 +1,4 @@
+run-example.sh
+.git
+node_modules/
+out/

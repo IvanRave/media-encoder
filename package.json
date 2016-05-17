@@ -1,0 +1,30 @@
+{
+  "name": "media-encoder",
+  "version": "0.1.0",
+  "description": "Simple middleware for AWS Elastic Transcoder: video and audio encoder",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanRave/media-encoder.git"
+  },
+  "keywords": [
+    "video",
+    "audio",
+    "encoder",
+    "aws",
+    "elastic",
+    "transcoder"
+  ],
+  "author": "IvanRave",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "aws-sdk": "2.x"
+  },
+  "bugs": {
+    "url": "https://github.com/IvanRave/media-encoder/issues"
+  },
+  "homepage": "https://github.com/IvanRave/media-encoder#readme"
+}

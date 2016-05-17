@@ -1,0 +1,24 @@
+{
+  "Job":{
+    "Id":"1463493506270-q5del3",
+    "Arn":"arn:aws:elastictranscoder:eu-west-1:081290220903:job/1463493506270-q5del3",
+    "PipelineId":"1463476983943-59pnhu",
+    "Input":{"Key":"src/file.mp3","FrameRate":null,"Resolution":null,"AspectRatio":null,"Interlaced":null,"Container":null},
+    "Output":{
+      "Id":"1","Key":"dst/out.mp3","ThumbnailPattern":null,"Rotate":null,"PresetId":"1351620000001-300040","SegmentDuration":null,"Status":"Progressing","StatusDetail":null,"Duration":null,"Width":null,"Height":null,"FrameRate":null,"FileSize":null,"DurationMillis":null,"Watermarks":[],"AppliedColorSpaceConversion":null
+    },
+    "Outputs":[
+      {
+        "Id":"1","Key":"dst/out.mp3","ThumbnailPattern":null,"Rotate":null,"PresetId":"1351620000001-300040","SegmentDuration":null,"Status":"Progressing","StatusDetail":null,"Duration":null,"Width":null,"Height":null,"FrameRate":null,"FileSize":null,"DurationMillis":null,"Watermarks":[],"AppliedColorSpaceConversion":null
+      }
+    ],
+    "OutputKeyPrefix":null,
+    "Playlists":[],
+    "Status":"Progressing",
+    "Timing":{
+      "SubmitTimeMillis":1463493506281,
+      "StartTimeMillis":1463493507890,
+      "FinishTimeMillis":null
+    }
+  }
+}
