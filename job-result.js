@@ -10,7 +10,7 @@ class JobResult{
    * Creates an instance
    * @param {Object} opts
    */
-  constructor(opts){
+  constructor(opts, s3Service, awsRegion, outputBucketName){
     if (!opts.Output || !opts.Input){
       console.log(JSON.stringify(opts));
       throw new Error('no Output or Input');
@@ -64,11 +64,17 @@ class JobResult{
     this.FileSize = opts.Output.FileSize;
 
     /**
-     * Destination file
+     * Destination file, like out128/file.mp3
      * @type {string}
      */
     this.DstFile = opts.Output.Key;
 
+    /**
+     * Path, like https://s3-eu-west-1.amazonaws.com/rave-media/
+     * @type {string}
+     */
+    this.DstPath = "https://" + s3Service + "-" + awsRegion + ".amazonaws.com/" + outputBucketName + "/";
+    
     /**
      * Source file
      * @type {string}

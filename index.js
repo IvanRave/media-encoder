@@ -20,13 +20,28 @@ class Encoder{
   constructor(AWS_ACCESS_KEY_ID,
               AWS_SECRET_ACCESS_KEY,
               awsRegion,
-              pipelineId){
+              pipelineId,
+              inputBucketName,
+              outputBucketName){
 
     /**
      * The Id of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.
      * @type {string}
      */
     this.pipelineId = pipelineId;
+
+    /**
+     * Region for transcoder and S3 storage
+     */
+    this.awsRegion = awsRegion;
+
+    /** Source files */
+    this.inputBucketName = inputBucketName;
+    
+    /**
+     * Output bucket name, according a pipeline
+     */
+    this.outputBucketName = outputBucketName;
 
     /**
      * Constructs a service interface object. Each API operation is exposed as a function on service.
@@ -157,7 +172,7 @@ class Encoder{
       return;
     }
     
-    next(null, new JobResult(data.Job));
+    next(null, new JobResult(data.Job, 's3', this.awsRegion, this.outputBucketName));
   }
 
   /**

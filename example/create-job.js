@@ -9,7 +9,9 @@ if (!AWS_ACCESS_KEY_ID || !AWS_SECRET_ACCESS_KEY){
 var encoder = new Encoder(AWS_ACCESS_KEY_ID,
                           AWS_SECRET_ACCESS_KEY,
                           'eu-west-1',
-                          '1463476983943-59pnhu');
+                          '1463476983943-59pnhu',
+                          'rave-media',
+                          'rave-media');
 
 
 var handleJobResult = function(err, jobResult){
@@ -19,8 +21,6 @@ var handleJobResult = function(err, jobResult){
       console.log('access denied for your user');
       return;
     case encoder.errAws:
-      throw encoder.errAws;
-      // code
       console.log('errAws: ' + encoder.errAws.message);
       return;
     }
@@ -31,7 +31,7 @@ var handleJobResult = function(err, jobResult){
   console.log(JSON.stringify(jobResult));
 
   if (jobResult.Status === "Submitted" || jobResult.Status === "Progressing"){
-    setTimeout(function(){
+    setTimeout(() => {
       encoder.readJob(jobResult.Id, handleJobResult);
     }, 2000);
   } else {

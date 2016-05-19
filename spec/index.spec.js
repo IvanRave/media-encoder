@@ -12,7 +12,9 @@ describe('Encoder', function(){
     encoder = new Encoder(AWS_ACCESS_KEY_ID,
                           AWS_SECRET_ACCESS_KEY,
                           'eu-west-1',
-                          'some-pipeline-id');
+                          'some-pipeline-id',
+                          'input-bucket',
+                          'output-bucket');
   });
   
   it('should progressing', function(done){
